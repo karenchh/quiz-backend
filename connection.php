@@ -3,6 +3,8 @@
 try{
     $host = "localhost";   // type of the host
     $port = 3306;
+    $dbname = "quizdb";
+    
 
 }catch(){
 
