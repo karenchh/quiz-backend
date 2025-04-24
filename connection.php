@@ -7,6 +7,8 @@ try{
     $user = "root";
     $pass = "";
 
-}catch(){
+    $connection = new PDO ("mysql:host=$host;port=$port;dbname=$dbname" , $user , $pass);
 
+}catch(\Throwable $e){
+    echo $e;
 }
