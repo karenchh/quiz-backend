@@ -9,8 +9,12 @@ if (isset($_POST["email"],$_POST["password"])){
     $query = $connection->prepare("SELECT * FROM users WHERE email = :email");
 
     $query->bindValue(":email", $email, PDO::PARAM_STR);  // Binding the email to the email to prevent sql injection
-        
+    // Creating empty array
+    $result =[];
+
     $query->execute();
+
+
 }
 else{
     echo json_encode(["message" => "login failed missing credintials."]);
