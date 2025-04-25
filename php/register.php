@@ -31,6 +31,7 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
         $insertuserquery->bindValue(":password", $password, PDO::PARAM_STR);
         $insertuserquery->execute();
     }
+    
 }
 else {
     echo json_encode(["message" => "Registration failed missing credintials."]);
