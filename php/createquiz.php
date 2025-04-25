@@ -7,4 +7,7 @@ if (isset($_GET["title"],$_GET["description"])){
     $description = $_GET["description"];
 
     $query = $connection->prepare("INSERT INTO quizzes (title,description) VALUES (:title,:description)");
+
+    $query->bindValue(":title", $title ,PDO::PARAM_STR);
+    $query->bindValue(":description", $description ,PDO::PARAM_STR);
 }
