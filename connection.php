@@ -4,7 +4,7 @@ try{
     $host = "localhost";   // type of the host
     $port = 3306; // port number of mysql
     $dbname = "quizdb"; //db name
-    $user = "root";
+    $user = "root";// from the priviledges in xampp
     $pass = "";
 
     $connection = new PDO ("mysql:host=$host;port=$port;dbname=$dbname" , $user , $pass);
