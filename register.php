@@ -7,6 +7,8 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
     $lastname = $_POST["lastname"];
     $email = $_POST["email"];
     $password = $_POST["password"];
+    $query = $connection->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+
 }
 
 
