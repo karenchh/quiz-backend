@@ -14,8 +14,11 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
     $query->bindValue(":password", $password, PDO::PARAM_CHAR); 
         
     $query->execute();
-    
-        
+
+    $result = []; //empty array
+    // change the returned array from the execution to an associative array that php understands
+    // fetch returns each array but it points only for one array that's why we need a loop
+    $user = $query->fetch(PDO::FETCH_ASSOC); 
     
 }
 
