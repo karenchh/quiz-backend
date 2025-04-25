@@ -12,4 +12,9 @@ if (isset($_GET["title"],$_GET["description"])){
     $query->bindValue(":description", $description ,PDO::PARAM_STR);
 
     $query->execute();
+
+    echo json_encode(["message" => "Quiz created successfully"]);
+}
+else{
+    echo json_encode(["message" => "Quiz not created ,please make sure you didn't miss any input"]);
 }
