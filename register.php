@@ -13,7 +13,7 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
     $query->bindValue(":email", $email, PDO::PARAM_STR);  // Binding the email to the email to prevent sql injection
     $query->bindValue(":password", $password, PDO::PARAM_CHAR); 
         
-        
+    $query->execute();
     
         
     
