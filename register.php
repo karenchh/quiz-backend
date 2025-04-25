@@ -11,7 +11,7 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
     $query = $connection->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
 
     $query->bindValue(":email", $email, PDO::PARAM_STR);  // Binding the email to the email to prevent sql injection
-    $query->bindValue(":password", $password, PDO::PARAM_CHAR); 
+    $query->bindValue(":password", $password, PDO::PARAM_STR); 
         
     $query->execute();
 
@@ -20,6 +20,10 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
     // In my opinion we don't need to fetch all since it is not allowed to have multiple rows with same email and pass
     // so if it exists we will not insert it again it will not be doubled 
     $user = $query->fetch(PDO::FETCH_ASSOC); 
+
+    if($user == true){   // if the user exists
+        echo json_encode(["message" => "Email already exists"]);
+    }
     
 }
 
