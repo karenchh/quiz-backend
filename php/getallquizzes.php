@@ -9,3 +9,4 @@ $result = [];
 while($user = $getquery->fetch(PDO::FETCH_ASSOC)){
     $result [] = $user; // pushing to the array results
 }
+echo json_encode($result);
