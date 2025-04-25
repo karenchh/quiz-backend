@@ -33,7 +33,7 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
     }
 }
 else {
-    echo json_encode(["message" => "Registration failed invalid credintials."]);
+    echo json_encode(["message" => "Registration failed missing credintials."]);
 }
 
 
