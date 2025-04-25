@@ -10,4 +10,6 @@ if (isset($_GET["title"],$_GET["description"])){
 
     $query->bindValue(":title", $title ,PDO::PARAM_STR);
     $query->bindValue(":description", $description ,PDO::PARAM_STR);
+
+    $query->execute();
 }
