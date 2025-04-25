@@ -15,9 +15,10 @@ if (isset($_POST["name"],$_POST["lastname"],$_POST["email"],$_POST["password"]))
         
     $query->execute();
 
-    $result = []; //empty array
     // change the returned array from the execution to an associative array that php understands
     // fetch returns each array but it points only for one array that's why we need a loop
+    // In my opinion we don't need to fetch all since it is not allowed to have multiple rows with same email and pass
+    // so if it exists we will not insert it again it will not be doubled 
     $user = $query->fetch(PDO::FETCH_ASSOC); 
     
 }
