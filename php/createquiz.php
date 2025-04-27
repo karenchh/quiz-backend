@@ -17,5 +17,5 @@
     } else {
         echo json_encode(["message" => "Question not created, please make sure you didn't miss any input"]);
     }
-    ?>
+
     
